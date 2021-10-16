@@ -17,5 +17,5 @@ To put this theme into your Logseq, copy and paste the contents of custom.css fi
 
 
 # Screenshots
-![white](./whitetheme.png)
-![black](./blacktheme.png)
+![white](./lighttheme.png)
+![black](./darktheme.png)
