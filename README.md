@@ -1,8 +1,8 @@
 # Logseq Plain Clean Theme
 
-This Logseq theme is based on these themes and much borrowing from logseq discord
-https://github.com/DubininDmitry/Harmony-theme-for-Logseq/edit/main/custom.css
-https://github.com/PiotrSss/logseq-clean-themes/blob/main/custom.css
+This Logseq theme is based on these themes and much borrowing from logseq discord<br>
+https://github.com/DubininDmitry/Harmony-theme-for-Logseq/edit/main/custom.css<br>
+https://github.com/PiotrSss/logseq-clean-themes/blob/main/custom.css<br>
 
 
 ## Key Features
