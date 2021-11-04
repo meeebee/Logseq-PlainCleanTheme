@@ -2,7 +2,10 @@
 
 Based on Harmony theme
 https://github.com/DubininDmitry/Harmony-theme-for-Logseq/edit/main/custom.css
+and
+https://github.com/PiotrSss/logseq-clean-themes/blob/main/custom.css
 
+meb v211104
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
@@ -74,9 +77,9 @@ html[data-theme='light'] {
   --ls-tertiary-background-color: lightgray; /*  background for sidebar blocks*/
   --ls-quaternary-background-color: lightgray; /* sidebar selection or hover color */
 
-  --ls-link-text-color: blue; /* #b2ccdf; */
-  --ls-page-title-size: 1.5rem;  /* meb change title */
-  --ls-title-text-color: darkblue; /* var(--ls-primary-text-color); */  /* meb change */
+  --ls-link-text-color: blue; 
+  --ls-page-title-size: 1.5rem;  /*  change title */
+  --ls-title-text-color: darkblue; 
   --ls-page-properties-background-color: var(--ls-secondary-background-color);
   --ls-block-properties-background-color: var(--ls-secondary-background-color);
   --ls-block-ref-link-text-color: var(--ls-link-text-color);
@@ -96,20 +99,15 @@ html[data-theme='light'] {
 }
 
 
-/*  section div.flex.relative added for text blocks   
-    Using developer tools, using arrow tool to select text
-    and it will show the name of the division*/
-
-
 /* left sidebar */
     .white-theme div.flex.relative {
       font-family:'Roboto',sans-serif;
       text-decoration: none;
       font-weight: 500; /* 500; */
       font-size: 0.85rem; 
-      color: black;
+      --ls-secondary-background-color:#1F1F1F;;
+      color: #1F1F1F;
     }
-
 
 .sidebar-item-list {
      padding-bottom: 150px;
@@ -123,12 +121,27 @@ html[data-theme='light'] {
       background-color:#EEEEEE;
     }
 
-    /*  right sidebar - bottom half*/
+/*  right sidebar - bottom half*/
     .white-theme div.sidebar-item-list {
       font-weight: 500; /* 500; */
       font-size: 0.85rem; 
       background-color: #EEEEEE;
     }
+
+/*  right sidebar - bottom half*/
+.white-theme div.cp__right-sidebar-topbar.flex.flex-row.justify-between.items-center.pl-4 {
+  font-weight: 600; /* 500; */
+  font-size: 0.85rem; 
+  background-color: #EEEEEE;
+}
+
+/*  query results main windows */
+.white-theme div.my-2.color-level {
+  font-weight: 500; /* 500; */
+  font-size: 0.85rem; 
+  background-color:lightcyan;
+}
+
 
 
 /* === Custom colors in buttons, hints etc ===  */
@@ -172,11 +185,30 @@ a.open-block-ref-link {
   color: #fff;
 }
 
+/* ======================================================================= */
 /* brackets in links */
+/*
+/*  WIP: not identifying well
+
 .page-reference .bracket {
   opacity: 0.5;
   color: var(--ls-link-text-color);
 }
+*/
+
+.page-ref {
+  /* opacity: 0.5; */
+  color: var(--ls-link-text-color); 
+}
+
+.page-ref:hover {
+  transform: scale(1.2);
+  /* background-color: blue; */
+  color: orange; /* blue; */
+  background: black;
+}
+
+/* */
 
 /* === Highlights === */
 mark {
@@ -187,16 +219,16 @@ mark {
   font-size: 14px;
 }
 .white-theme mark {
-  background: yellow; /*  rgba(0, 0, 0, 0.5); */
+  background: yellow; 
   color: black;
 }
 
 /* fix color page-reference when mark text */
 mark .page-ref, mark .page-reference .bracket {
-  color: var(--ls-primary-background-color);
+  background: rgba(255, 255, 255, 0.8);
+  color:  var(--ls-primary-background-color); 
   font-weight: bold;
 }
-
 
 /* === Checkbox === */
 .form-checkbox {
@@ -204,11 +236,10 @@ mark .page-ref, mark .page-reference .bracket {
 }
 .dark-theme .form-checkbox {
   border: 1px solid rgba(255, 255, 255, 0.5);
-  background-color: #98BCCD; /* rgba(255, 255, 255, 0.5); */  /* meb added */
+  background-color: #98BCCD; 
 }
 .white-theme .form-checkbox {
-  /* border: 1px solid rgba(0, 0, 0, 0.5);  */
-  background-color: #ADC9D7;   /* meb added */
+  background-color: #ADC9D7;   
 }
 
 .dark-theme .form-checkbox:checked {
@@ -235,6 +266,8 @@ mark .page-ref, mark .page-reference .bracket {
 }
 
 /* === Marker for Task Status === */
+
+/* plain block market switch
 .marker-switch {
   font-size: 0.75rem;
   margin-right: 6px;
@@ -250,16 +283,54 @@ mark .page-ref, mark .page-reference .bracket {
   line-height: 1;
   cursor: pointer;
 }
+
 .dark-theme .marker-switch {
-  color: black; /* rgba(255, 255, 255, 0.5); */
-  background: lightblue;   /* meb added  */
-  border: 0.02px solid lightgray;    /* meb added  */
+  color: black; 
+  background: lightblue;   
+  border: 0.02px solid lightgray;    
 }
 .white-theme .marker-switch {
   color: rgba(0, 0, 0, 0.5); 
-  background: lightblue;    /* meb added  */
-  border: 0.02px solid lightgray;   /* meb added  */
+  background: lightblue; 
+  border: 0.02px solid lightgray;   
 }
+*/
+
+/* Markers new*/
+
+/*
+.form-checkbox,
+.form-checkbox:focus {
+  border-radius: 100%;
+  border: 2px solid var(--ct-checkbox-color);
+  background-color: white !important;
+  height: calc(var(--ct-marker-size) + 2px);
+  width: calc(var(--ct-marker-size) + 2px);
+  margin-top: 0px !important;
+  z-index: 1;
+  position: relative;
+}
+
+.form-checkbox:hover {
+  transform: unset;
+}
+*/
+
+.marker-switch {
+  opacity: 1;
+  transition: 0.3s;
+  margin-left: -1em;
+  margin-right: 4px;
+  height: var(--ct-marker-size);
+  padding: 1px 6px 1px 12px;
+  border-radius: 0 3px 3px 0;
+  font-weight: bold;
+  /* background: var(--ls-tertiary-background-color); */
+  /* background-color: #ADC9D7;  */
+  color: var(--ls-primary-text-color); */
+}
+
+
 
 /* === Zoom Image on hover === */
 .block-content img {
@@ -311,29 +382,8 @@ a.external-link:hover:after {
   background-color: var(--ls-link-text-hover-color);
 }
 
-/* === Tags ===  */
-/*  dark color for tags
-a.tag[data-ref] {
-  color: var(--ls-primary-background-color);
-  background: var(--ls-link-text-color);
-  border-radius: 0.5rem 0rem;
-  font-size: 0.75rem;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-  line-height: 0.75rem;
-  padding: 0.2rem 0.3rem;
-  transition: 0.3s;
-  white-space: nowrap;
-}
-
-a.tag[data-ref]:hover {
-  opacity: 1;
-  background-color: var(--ls-link-text-hover-color);
-  border-radius: 0rem 0.5rem;
-}
-*/
-
 /* Tags */
+/* Plain gray tag
 a.tag {
   border: 0px solid lightgray;
   padding: 0 4px;
@@ -347,6 +397,23 @@ a.tag {
 a.tag:hover {
   background-color: var(--ct-block-reference-background-hover);
 }
+*/
+
+/* Tags */
+a.tag {
+  border: 1px solid currentColor;
+  background-color: var(--ct-block-reference-background);
+  padding: 0 4px;
+  border-radius: 4px;
+  font-weight: 600;
+  line-height: 1.2;
+  font-size: 0.8em;
+}
+
+a.tag:hover {
+  background-color: var(--ct-block-reference-background-hover);
+}
+
 
 /* === Inline code === */
 :not(pre) > code {
@@ -411,4 +478,4 @@ a.tag:hover {
 }
 .CodeMirror-focused .CodeMirror-selected {
     background: var(--ls-selection-background-color);
-}
+} 
